@@ -9,7 +9,6 @@ router.post('/', async (req, res) => {
         where: { email: req.body.email }
     })
     
-    console.log(user)
     console.log('IN HERE')
     
     if (!user || !await bcrypt.compare(req.body.password, user.passwordDigest)) {
